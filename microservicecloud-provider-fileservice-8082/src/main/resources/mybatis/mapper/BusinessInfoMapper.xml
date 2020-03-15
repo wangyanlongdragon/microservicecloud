@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.founder.springcloud.dao.BusinessInfoDao">
+ 
+  <select id="findById" resultType="BusinessInfo" parameterType="Long">
+   select business_id,sys_no,cust_no,db_source from t_business where business_id=#{business_id}; 
+  </select>
+  <select id="findAll" resultType="BusinessInfo">
+   select business_id,sys_no,cust_no,db_source from t_business; 
+  </select>
+  <insert id="addBusinessInfo" parameterType="BusinessInfo">
+   INSERT INTO t_business(sys_no,cust_no,db_source)VALUES(#{sys_no},#{cust_no},DATABASE());
+  </insert>
+  
+</mapper>

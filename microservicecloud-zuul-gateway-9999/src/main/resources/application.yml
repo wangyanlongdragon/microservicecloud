@@ -1,0 +1,27 @@
+server: 
+  port: 9999
+ 
+spring: 
+  application:
+    name: microservicecloud-zuul-gateway                        #hosts:127.0.0.1  founderzuul.com
+                                                                #原有服务访问样例：http://localhost:8081/business/get/1
+                                                                #访问服务样例：http://founderzuul.com:9999/microservicecloud-provider-fileservice/business/get/2
+zuul:
+  prefix: /wyl                                                  #对外暴露服务前缀，必须加前缀才能正常访问:访问样例:http://founderzuul.com:9999/wyl/founder/business/get/2
+  ignored-services: "*"                                         #禁止使用原有服务映射，支持通配符
+  routes: 
+    mydept.serviceId: microservicecloud-provider-fileservice    #原有服务名称
+    mydept.path: /founder/**                                    #映射服务名称  访问样例:http://founderzuul.com:9999/founder/business/get/2
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: founder-gateway-9999.com                 
+    prefer-ip-address: true 
+
+info:                                                       #配置服务提示信息
+  app.name: founder-microservicecloud-gateway
+  company.name: www.founder.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
