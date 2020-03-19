@@ -33,7 +33,6 @@ public class BusinessController {
 	private DataSource dataSource;
 
 	@PostMapping(value = "/business/add")
-	@HystrixCommand(fallbackMethod = "businessHystrix_Add")
 	public boolean add(@RequestBody BusinessInfo businessInfo) {
 		boolean add;
 		try {
