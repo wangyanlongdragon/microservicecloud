@@ -22,7 +22,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
  * 这里用在服务端，需要为每一个需要熔断的服务些对应的方法处理异常，代码耦合度高，不推荐，推荐
  * 使用服务降级，推荐在使用feign的暴露接口的公共端实现服务降级处理，类似aop切面
  * @author wyl
- * @date 2020年3月10日 下午4:14:11
+ * @date 2020年3月20日 下午4:14:11
  * @version v1.0
  */
 @RestController
