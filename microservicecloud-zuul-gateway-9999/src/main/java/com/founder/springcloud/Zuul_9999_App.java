@@ -11,6 +11,7 @@ public class Zuul_9999_App {
 	
 	
 	public static void main(String[] args) {
+		
 		System.out.println("网关启动...");
 		SpringApplication.run(Zuul_9999_App.class, args);
 	}

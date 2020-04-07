@@ -14,6 +14,7 @@ public interface BusinessFeignClientService {
 	@GetMapping(value = "/business/add")
 	public boolean add(BusinessInfo businessInfo);
 
+	
 	@GetMapping(value = "/business/get/{id}")
 	public BusinessInfo get(@PathVariable("id") long id);
 

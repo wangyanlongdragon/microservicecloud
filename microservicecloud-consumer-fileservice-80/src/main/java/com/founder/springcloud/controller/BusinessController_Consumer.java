@@ -29,6 +29,7 @@ public class BusinessController_Consumer {
 		return restTemplate.postForObject(REST_SERVICE_URL_PREFIX+"/business/add", businessInfo, Boolean.class);
 	}
 	
+	
 	@GetMapping(value="/consumer/business/get/{id}")
 	public BusinessInfo get(@PathVariable("id")long id) {
 		return restTemplate.getForObject(REST_SERVICE_URL_PREFIX+"/business/get/"+id, BusinessInfo.class);
